@@ -264,3 +264,34 @@ const reportFunction = () => {
         // Log the stats calculated
     )
 }
+
+switch (args[2]) {
+    case 'add': {
+        addFunction();
+        break;
+    }
+
+    case 'ls': {
+        listFunction();
+        break;
+    }
+
+    case 'del': {
+        deleteFunction();
+        break;
+    }
+
+    case 'done': {
+        doneFunction();
+        break;
+    }
+
+    case 'report': {
+        reportFunction();
+        break;
+    }
+
+    default: {
+        InfoFunction();
+    }
+}
