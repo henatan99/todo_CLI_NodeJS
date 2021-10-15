@@ -169,6 +169,11 @@ const doneFunction = () => {
             currentWorkingDirectory + 'done.txt'
         ).toString();
 
+        // Read the data from done.txt
+        const doneData = fs.readFileSync(
+            currentWorkingDirectory + 'done.txt'
+        ).toString();
+
         // Split the todo.txt data 
         data = fileData.split('\n');
 
