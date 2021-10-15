@@ -56,3 +56,38 @@ const listFunction = () => {
         console.log((filterData.length - i) + '. ' + filterData[i]);
     }
 }
+
+const addFunction = () => {
+
+    // New todo string argument is stored
+    const newTask = args[3];
+
+    // If argument is passed
+    if (newTask) {
+
+        // Create a empty array
+        let data = [];
+
+        // Read the data from the file todo.txt and convert it to string
+        const fileData = fs.readFileSync(
+            currentWorkingDirectory + 'todo.txt'
+        ).toString();
+
+        // New task is added to prebious data
+        fs.writeFile(
+            currentWorkingDirectory + 'todo.txt',
+            newTask + '\n' + fileData,
+
+            function (err) {
+                // Handle if there is any error
+                if (err) throw err;
+
+                // Logs the new task added
+                console.log('Added todo: "' + newTask + '"');
+            },
+        );
+    } else {
+        // If argument was not passed
+        console.log('Error: Missing todo string. Nothinf added!');
+    }
+}
