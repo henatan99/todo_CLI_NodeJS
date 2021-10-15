@@ -166,7 +166,7 @@ const doneFunction = () => {
 
         // Read the data from todo.txt
         const fileData = fs.readFileSync(
-            currentWorkingDirectory + 'done.txt'
+            currentWorkingDirectory + 'todo.txt'
         ).toString();
 
         // Read the data from done.txt
